@@ -1,5 +1,3 @@
-// js/scale.js
-
 function applyScaleLayout() {
     const baseWidth = 1920;
     const currentWidth = window.innerWidth;
@@ -7,16 +5,12 @@ function applyScaleLayout() {
 
     if (!app) return;
 
-    if (currentWidth >= baseWidth) {
-        app.style.transform = 'scale(1)';
-        app.style.transformOrigin = 'top left';
-        app.style.width = '100%';
-    } else {
-        const scaleFactor = currentWidth / baseWidth;
-        app.style.transform = `scale(${scaleFactor})`;
-        app.style.transformOrigin = 'top left';
-        app.style.width = `${baseWidth}px`;
-    }
+    const scaleFactor = currentWidth / baseWidth;
+
+    app.style.transform = `scale(${scaleFactor})`;
+    app.style.transformOrigin = 'top left';
+    app.style.width = `${baseWidth}px`;
+    app.style.height = `${window.innerHeight / scaleFactor}px`; // чтобы не было скролла
 }
 
 window.addEventListener('resize', applyScaleLayout);
