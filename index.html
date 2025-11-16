@@ -1,167 +1,485 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="js/scale.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Все соискатели</title>
-</head>
-<body>
-    <div id="app">
-    <header class="header">
-        <nav class="navbar">
-            <a href="#"><img src="media/logo.png" alt="logo" class="logo"></a>
-            <ul class="nav-menu">
-              <li><a href="#" class="nav-link"><img src="media/people_1.png" alt="people" class="nav-ico">СОИСКАТЕЛИ</a></li>
-              <li><a href="#" class="nav-link"><img src="media/address.png" alt="address" class="nav-ico">ВСЕ СОИСКАТЕЛИ</a></li>
-              <li><a href="#" class="nav-link"><img src="media/people_2.png" alt="people2" class="nav-ico">ДОБАВИТЬ СОИСКАТЕЛЯ</a></li>
-              <li><a href="#" class="nav-link"><img src="media/pc.png" alt="pc" class="nav-ico">МОИ ВАКАНСИИ НА САЙТАХ</a></li>
-            </ul>
-            <a href="#" class="nav-text-exit">Все Вакансии Нижнего<img src="media/exit.png" alt="logo" class="nav-ico"></a>
-          </nav>
-    </header>
-    <div class="main">
-        <div class="types">
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Аспирити - Разработка AI-решений для бизнеса</title>
+    <meta
+      name="description"
+      content="Разработка AI-решений, автоматизация процессов и внедрение интеллектуальных систем для бизнеса."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aspiriti.ru" />
+    <meta
+      property="og:title"
+      content="Аспирити - Разработка AI-решений для бизнеса"
+    />
+    <meta
+      property="og:description"
+      content="Разработка AI-решений, автоматизация процессов и внедрение интеллектуальных систем для бизнеса."
+    />
+    <meta property="og:image" content="/assets/apple-touch-icon.png" />
+    <meta property="og:site_name" content="Аспирити" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="https://aspiriti.ru" />
+    <meta
+      property="twitter:title"
+      content="Аспирити - Разработка AI-решений для бизнеса"
+    />
+    <meta
+      property="twitter:description"
+      content="Разработка AI-решений, автоматизация процессов и внедрение интеллектуальных систем для бизнеса."
+    />
+    <meta property="twitter:image" content="/assets/apple-touch-icon.png" />
+
+    <!-- SEO & Favicons -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Аспирити" />
+    <meta
+      name="keywords"
+      content="AI, искусственный интеллект, автоматизация, цифровые решения, разработка, технологии, бизнес, инновации"
+    />
+    <link rel="canonical" href="https://aspiriti.ru" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href="/assets/favicon-16x16.png"
+      type="image/png"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      href="/assets/favicon-32x32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="/assets/favicon-192x192.png"
+      type="image/png"
+      sizes="192x192"
+    />
+    <link
+      rel="icon"
+      href="/assets/favicon-512x512.png"
+      type="image/png"
+      sizes="512x512"
+    />
+
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      href="/assets/apple-touch-icon.png"
+      sizes="180x180"
+    />
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#6366F1" />
+    <meta
+      name="msapplication-TileImage"
+      content="/assets/favicon-192x192.png"
+    />
+    <meta name="msapplication-config" content="none" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#6366F1" />
+    <meta name="msapplication-navbutton-color" content="#6366F1" />
+
+    <!-- Fonts & CSS -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/css/mobile.css" type="text/css" media="all" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="#home" class="logo">
+            <div class="logo-icon">
+              <div class="logo-inner"></div>
+            </div>
+            <span class="logo-text">Аспирити</span>
+          </a>
+          <nav class="desktop-nav">
             <ul>
-                <li><a href="">КОМПАНИИ</a></li>
-                <li><a href="">ПОЛЬЗОВАТЕЛИ</a></li>
-                <li><a href="">ИМПОРТ</a></li>
-                <li><a href="">ЛОГ ИМПОРТА В HTML</a></li>
-                <li><a href="">ВЫГРУЗКА В XLSX ПОЛЬЗОВАТЕЛЕЙ</a></li>
-                <li><a href="">ОТПРАВКА ПИСЕМ</a></li>
-                <li><a href="">НАСТРОЙКИ</a></li>
-                <li><a href="">СПРАВЧНИК ПРЕОБРАЗОВАНИЙ</a></li>
-                <li><a href="">ИСТОРИЯ ПОСЕЩЕНИЯ САЙТА</a></li>
-                <li><a href="">БАНЫ IP</a></li>
+              <li><a href="#services" class="nav-link">Услуги</a></li>
+              <li><a href="#technologies" class="nav-link">Технологии</a></li>
+              <li><a href="#about" class="nav-link">О компании</a></li>
+              <li><a href="#contact" class="nav-link">Связь</a></li>
             </ul>
+          </nav>
+          <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-        <div class="filters">
-            <div class="container">
-                <table class="my-table">
-                    <tbody>
-                        <tr class="horizontal">
-                            <td><p>ДАТА ОТ  </p><p class="filter-spec-text"> 12.05.2023</p></td>
-                            <td><p>ДАТА ДО  </p><p class="filter-spec-text"> 12.05.2023</p></td>
-                            <td><p>КОЛИЧЕСТВО СОИСКАТЕЛЕЙ: </p><p class="filter-spec-text">298732</p></td>
-                            <td class="dropdown">
-                                <button class="dropdown-btn">ПО ВОЗРАСТУ<img src="media/down-arrow.png" alt="" style="margin: 0;"></button>
-                                <div class="dropdown-content">
-                                    <a href="#">ПО ВОЗРАСТУ</a>
-                                    <a href="#">ПО ПОЛУ</a>
-                                    <a href="#">ПО СТАЖУ</a>
-                                </div>
-                            </td>
-                            <td class="dropdown">
-                                <button class="dropdown-btn">1000<img src="media/down-arrow.png" alt=""></button>
-                                <div class="dropdown-content">
-                                    <a href="#">100</a>
-                                    <a href="#">500</a>
-                                    <a href="#">1000</a>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- Повторяющиеся строки -->
-                    </tbody>
-                </table>
-            
-                <div class="buttons">
-                    <button class="square-btn"><<</button>
-                    <button class="square-btn">First</button>
-                    <button class="square-btn">1</button>
-                    <button class="square-btn">2</button>
-                    <button class="square-btn">3</button>
-                    <button class="square-btn">4</button>
-                    <button class="square-btn">5</button>
-                    <button class="square-btn">...</button>
-                    <button class="square-btn">23</button>
-                    <button class="square-btn">Next</button>
-                </div>
-        </div>            
-        <div class="container">
-            <table class="table">
-                <thead>
-                    <tr class="cells">
-                        <th>№ ID</th>
-                        <th>ФАМИЛИЯ ИМЯ ОТЧЕСТВО ВОЗРАСТ/ДАТА РОЖДЕНИЯ ТЕЛЕФОН/EMAIL</th>
-                        <th class="column-photo">ФОТО</th>
-                        <th>РЕГИОН/ГОРОД/РАЙОН ГОРОДА/АДРЕС</th>
-                        <th>ОБРАЗОВАНИЕ</th>
-                        <th>СЕМЬЯ ДЕТИ</th>
-                        <th>ПОСЛЕДНЕЕ МЕСТО РАБОТЫ<br>ДОЛЖНОСТЬ<br>СТАЖ</th>
-                        <th class="column-salary">РАБОТА.З/П ИСТОЧНИК СКАЧАТЬ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="media/search.png" alt=""></td>
-                        <td><img src="media/search.png" alt=""></td>
-                        <td style="text-align: right;"><img src="media/down-arrow.png" alt="" class="down-arrow"></td>
-                        <td><img src="media/search.png" alt=""></td>
-                        <td><img src="media/search.png" alt=""></td>
-                        <td><img src="media/search.png" alt=""></td>
-                        <td><img src="media/search.png" alt=""></td>
-                        <td><img src="media/search.png" alt=""></td>
-                    </tr>
-                    <tr>
-                        <td>
-  1 
-  <img src="media/trash.png" alt="">
-    <span class="tooltip-red">
-    <img src="media/red.png" alt="">
-  </span>
-  </div>
-</td>
+      </div>
+    </header>
 
-
-                        <td><pre><span class="regular-weigth">Герасимчук Алексей Федорович</span>
-Возраст: <span class="regular-weigth">25 лет</span>               <img src="media/libra.png" alt=""><span class="regular-weigth">Скорпион</span>
-Дата рождения: <span class="regular-weigth">03 сентября 2000</span>
-<span class="regular-weigth">89527779999</span> Мегафон Нижег.обл.   
-zahhdsggddhh@yandex.ru</pre></td>
-                        <td><pre></pre></td>
-                        <td><pre>город Нижний Новгород
-<span class="sormovskiy">Сормовский район</span>
-<span class="priokskiy">Приокский район</span>
-                        </pre></td>
-                        <td><pre>Высшее образование
-<span class="regular-weigth">Высшая школа экономики, 
-г. Нижний Новгород, 2015</span>
-Какаета тут специальность
-
-<span class="regular-weigth">Саранский кооперативный 
-институт (филиал) Российс-
-кого университета кооперации, Саранск, 2023</span>
-Экономический, 
-Бухгалтерский учет, 
-анализ и аудит</pre></td>
-                        <td><pre>Не замужем
-2
-12+11
-                        </pre></td>
-                        <td><pre><span class="job-period">Сентябрь — Февраль</span>
-Компания: ООО "Эллой"
-<span class="regular-weigth">Менеджер по работе с клиентами</span>
--1С8-Оформление счетов
--Оформление реализаций
--Договора
--Коммерческие предложения
--Отчёты
--Акты сверки
--Дебитоская задолженность
-</pre></td>
-                        <td><pre>от 65000 
-Superjob.ru <br><span class="tooltip-static"><img src="media/bluecv.png" alt=""></span><span class="tooltip-gray"><img src="media/graycv.png" alt=""></span>
-
-
-                        </pre>
-                    </td>
-                </tbody>
-            </table>
-
-        </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-header">
+        <a href="#home" class="mobile-logo">
+          <div class="logo-icon">
+            <div class="logo-inner"></div>
+          </div>
+          <span class="logo-text">Аспирити</span>
+        </a>
+      </div>
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="#home" class="mobile-nav-link">Главная</a></li>
+          <li><a href="#services" class="mobile-nav-link">Услуги</a></li>
+          <li>
+            <a href="#technologies" class="mobile-nav-link">Технологии</a>
+          </li>
+          <li><a href="#about" class="mobile-nav-link">О компании</a></li>
+          <li><a href="#contact" class="mobile-nav-link">Связь с нами</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-contact">
+        <a
+          href="mailto:info@aspiriti.ru"
+          class="mobile-contact-item"
+          target="_blank"
+        >
+          <img
+            src="https://api.iconify.design/material-symbols:mail.svg?color=%23E8E8E8"
+            alt="Email"
+            class="mobile-contact-icon-img"
+            width="18"
+            height="18"
+          />
+          <span>info@aspiriti.ru</span>
+        </a>
+        <a href="tel:+78000000000" class="mobile-contact-item">
+          <img
+            src="https://api.iconify.design/material-symbols:call.svg?color=%23E8E8E8"
+            alt="Phone"
+            class="mobile-contact-icon-img"
+            width="18"
+            height="18"
+          />
+          <span>8 800 000 0000</span>
+        </a>
+      </div>
     </div>
-</div>
-</body>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-background">
+          <div class="hero-stars"></div>
+          <div class="hero-planet">
+            <div class="planet-logo"></div>
+          </div>
+          <div class="hero-cityscape">
+            <div class="city-buildings"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title fade-in stagger-1" id="hero-title">
+              Разработка AI-решений<br />
+              <span class="highlight">для вашего бизнеса и проектов</span>
+            </h1>
+            <p class="hero-subtitle fade-in stagger-2" id="hero-subtitle">
+              Мы создаём инновационные AI-системы для анализа данных,
+              автоматизации и цифровой трансформации.
+            </p>
+          </div>
+        </div>
+        <div class="section-arrow" data-target="services"></div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="services">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title fade-in stagger-1" id="services-title">
+              - Наши услуги -
+            </h2>
+            <p
+              class="section-subtitle fade-in stagger-2"
+              id="services-subtitle"
+            >
+              Полный спектр AI-решений для бизнеса и организаций
+            </p>
+          </div>
+          <div class="services-grid">
+            <div
+              class="service-card scale-in stagger-1"
+              data-service="location"
+            >
+              <h3 class="service-title">Голосовые AI-системы</h3>
+              <p class="service-description">
+                Разработка голосовых ассистентов, аналитики звонков и
+                автоматизации колл-центров.
+              </p>
+            </div>
+            <div
+              class="service-card scale-in stagger-2"
+              data-service="schedule"
+            >
+              <h3 class="service-title">Обработка данных</h3>
+              <p class="service-description">
+                Автоматизация анализа больших объёмов данных и подготовка
+                бизнес-отчётов с помощью AI.
+              </p>
+            </div>
+            <div
+              class="service-card scale-in stagger-3"
+              data-service="contract"
+            >
+              <h3 class="service-title">Документные AI-решения</h3>
+              <p class="service-description">
+                Системы для разбора резюме, контрактов и документов с
+                применением искусственного интеллекта.
+              </p>
+            </div>
+            <div class="service-card scale-in stagger-4" data-service="money">
+              <h3 class="service-title">AI для маркетинга и продаж</h3>
+              <p class="service-description">
+                Автоматизация маркетинговых кампаний и лидогенерации с
+                использованием AI.
+              </p>
+            </div>
+            <div class="service-card scale-in stagger-5" data-service="growth">
+              <h3 class="service-title">Аналитика и прогнозы</h3>
+              <p class="service-description">
+                Построение моделей прогнозирования, аналитики и оптимизации
+                процессов.
+              </p>
+            </div>
+            <div class="service-card scale-in stagger-6" data-service="team">
+              <h3 class="service-title">Интеграция AI в бизнес</h3>
+              <p class="service-description">
+                Внедрение AI-решений в существующие системы и платформы для
+                максимальной эффективности.
+              </p>
+            </div>
+          </div>
+          <div class="section-arrow" data-target="technologies"></div>
+        </div>
+      </section>
+
+      <!-- Technologies Section -->
+      <section id="technologies" class="technologies">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title fade-in stagger-1" id="advantages-title">
+              - Наши технологии -
+            </h2>
+            <p
+              class="section-subtitle fade-in stagger-2"
+              id="advantages-subtitle"
+            >
+              Инновационные AI-инструменты для любых задач
+            </p>
+          </div>
+          <div class="advantages-grid">
+            <div class="advantage-card slide-in-left stagger-1">
+              <h3 class="advantage-title">Голосовые ассистенты</h3>
+              <p class="advantage-description">
+                Разработка интеллектуальных голосовых помощников для бизнеса.
+              </p>
+            </div>
+            <div class="advantage-card slide-in-left stagger-2">
+              <h3 class="advantage-title">Обработка текста и документов</h3>
+              <p class="advantage-description">
+                Автоматизация работы с документами и текстовой информацией.
+              </p>
+            </div>
+            <div class="advantage-card slide-in-left stagger-3">
+              <h3 class="advantage-title">Аналитика разговоров</h3>
+              <p class="advantage-description">
+                AI-анализ звонков и коммуникаций для повышения эффективности.
+              </p>
+            </div>
+            <div class="advantage-card slide-in-left stagger-4">
+              <h3 class="advantage-title">Прогнозирование и ML-модели</h3>
+              <p class="advantage-description">
+                Создание моделей прогнозирования и бизнес-аналитики.
+              </p>
+            </div>
+            <div class="advantage-card slide-in-left stagger-5">
+              <h3 class="advantage-title">Интеграция AI в системы</h3>
+              <p class="advantage-description">
+                Внедрение AI в существующие корпоративные и продуктовые
+                платформы.
+              </p>
+            </div>
+            <div class="advantage-card slide-in-left stagger-6">
+              <h3 class="advantage-title">Инновационные решения</h3>
+              <p class="advantage-description">
+                Разработка кастомных AI-приложений под конкретные задачи
+                бизнеса.
+              </p>
+            </div>
+          </div>
+          <div class="section-arrow" data-target="about"></div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title fade-in stagger-1" id="about-title">
+              - О компании -
+            </h2>
+            <p class="section-subtitle fade-in stagger-2" id="about-subtitle">
+              Мы создаём AI-решения для бизнеса, улучшая процессы и повышая
+              эффективность
+            </p>
+          </div>
+          <div class="about-content">
+            <div class="about-text">
+              <div class="feature slide-in-left stagger-1">
+                <div class="feature-text">
+                  <h3>Что мы делаем?</h3>
+                  <p>
+                    Разрабатываем интеллектуальные системы и AI-приложения для
+                    автоматизации и анализа.
+                  </p>
+                </div>
+              </div>
+              <div class="feature slide-in-left stagger-2">
+                <div class="feature-text">
+                  <h3>Наш подход</h3>
+                  <p>
+                    Индивидуальная разработка под задачи клиента с гибкой
+                    интеграцией в существующие процессы.
+                  </p>
+                </div>
+              </div>
+              <div class="feature slide-in-left stagger-3">
+                <div class="feature-text">
+                  <h3>Сроки внедрения</h3>
+                  <p>
+                    Проекты реализуются быстро с тестированием и оптимизацией
+                    под бизнес-задачи.
+                  </p>
+                </div>
+              </div>
+              <div class="feature slide-in-left stagger-4">
+                <div class="feature-text">
+                  <h3>Поддержка</h3>
+                  <p>
+                    Консультации и сопровождение на всех этапах внедрения
+                    AI-решений.
+                  </p>
+                </div>
+              </div>
+              <div class="feature slide-in-left stagger-5">
+                <div class="feature-text">
+                  <h3>Инструменты и технологии</h3>
+                  <p>
+                    Используем передовые платформы, фреймворки и облачные
+                    решения для AI.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-arrow" data-target="contact"></div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-new">
+        <div class="container">
+          <div class="contact-top-card fade-in stagger-1">
+            <div class="contact-top-content">
+              <div class="contact-top-text">
+                <h2 class="contact-top-title slide-in-left stagger-1">
+                  Готовы <span class="highlight">внедрять AI?</span>
+                </h2>
+                <p class="contact-top-description slide-in-left stagger-2">
+                  Свяжитесь с нашей командой для обсуждения AI-проектов и
+                  интеграции технологий.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-main-section">
+            <div class="contact-left slide-in-left stagger-1">
+              <h2 class="contact-main-title">
+                Свяжитесь<br /><span class="highlight">с нами</span>
+              </h2>
+              <p class="contact-description">
+                Обсудим внедрение AI-решений, оптимизацию процессов и
+                автоматизацию.
+              </p>
+            </div>
+
+            <div class="contact-right slide-in-right stagger-1">
+              <a
+                href="mailto:info@aspiriti.ru"
+                class="contact-detail-item scale-in stagger-2"
+              >
+                <img
+                  src="https://api.iconify.design/material-symbols:mail.svg?color=%23FF5722"
+                  alt="Email"
+                  class="contact-detail-icon-img"
+                  width="22"
+                  height="22"
+                />
+                <span class="contact-detail-text">info@aspiriti.ru</span>
+              </a>
+              <a
+                href="tel:+78000000000"
+                class="contact-detail-item scale-in stagger-2"
+              >
+                <img
+                  src="https://api.iconify.design/material-symbols:call.svg?color=%23FF5722"
+                  alt="Phone"
+                  class="contact-detail-icon-img"
+                  width="22"
+                  height="22"
+                />
+                <span class="contact-detail-text">8 800 000 0000</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <div class="logo-icon">
+              <div class="logo-inner"></div>
+            </div>
+            <span class="logo-text"><a href="#home">Аспирити</a></span>
+          </div>
+          <div class="footer-info">
+            <p>© Аспирити 2025</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+  </body>
 </html>
